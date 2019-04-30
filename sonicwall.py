@@ -10,20 +10,23 @@ import re
 from hashlib import md5
 import requests
 from HTMLParser import HTMLParser
-
+UNAME = raw_input("insert the username : ")
+PASSWORD = raw_input("insert the password : ")
+DOMAIN = raw_input("insert the server url(just the domain/ip) : ")
+DOMAIN= "https://"+DOMAIN
 ################ ignore insecure https requests###########################
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 ##########################################################################
 # Enter your username and password
-UNAME = 'aluno'
-PASSWORD = 'aluno' # Fill it in suckers
+#UNAME = 'aluno'
+#PASSWORD = 'aluno' # Fill it in suckers
 
 BEAT_INTERVAL = 15
 MIN_RELOGIN = 10
 
-DOMAIN = 'https://172.18.0.1'
+#DOMAIN = 'https://172.18.0.1'
 LOGIN_PORTAL = DOMAIN + '/auth1.html'
 AUTH_PAGE = DOMAIN + '/auth.cgi'
 HEARTBEAT = DOMAIN + '/usrHeartbeat.cgi'
@@ -118,3 +121,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
